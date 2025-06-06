@@ -12,7 +12,6 @@ export default function ArticleDetailsPage({ params }: Props) {
   }
   return (
     <div>
-      <h1>Hello Article Details</h1>
       <PostDetail post={post} />
     </div>
   );

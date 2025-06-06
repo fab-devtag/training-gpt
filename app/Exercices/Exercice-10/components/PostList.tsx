@@ -8,7 +8,6 @@ interface Props {
 const PostList = ({ posts }: Props) => {
   return (
     <div>
-      <h1>Voici la liste des articles</h1>
       <div>
         {posts.map((post) => (
           <PostItem key={post.id} post={post} />
