@@ -3,15 +3,7 @@ import { useEffect, useState } from "react";
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
-  /*  const [currentHour, setCurrentHour] = useState(
-    new Date(Date.now()).getHours()
-  );
-  const [currentMinute, setCurrentMinute] = useState(
-    new Date(Date.now()).getMinutes()
-  );
-  const [currentSeconds, setCurrentSeconds] = useState(
-    new Date(Date.now()).getSeconds()
-  ); */
+
   const [stopHourCount, setStopHoutCount] = useState(false);
   useEffect(() => {
     let intervalId = setInterval(() => {

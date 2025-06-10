@@ -2,18 +2,38 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <div className="bg-white h-screen text-black flex justify-center items-center">
-        <div className="space-y-2">
-          <h1>Bienvenue</h1>
-          <Link
-            className="bg-red-400 p-2 rounded-full hover:bg-red-600"
-            href="/Exercices/Exercice-7/about"
-          >
-            À propos
-          </Link>
-        </div>
-      </div>
+    <div className="flex flex-col">
+      <Link href="/Exercices/Exercice-1">
+        1 - Props & State - Composant simple : UserCard
+      </Link>
+      <Link href="/Exercices/Exercice-2">
+        2 - UseEffect - Composant simple : TodoList
+      </Link>
+      <Link href="/Exercices/Exercice-3">
+        3 - Filtrage Dynamique - UserList
+      </Link>
+      <Link href="/Exercices/Exercice-4">
+        4 - Controlled Input - Task Manager
+      </Link>
+      <Link href="/Exercices/Exercice-5">
+        5 - Form et Validation - Contact Form
+      </Link>
+      <Link href="/Exercices/Exercice-6">6 - UseEffect Avancé - Clock</Link>
+      <Link href="/Exercices/Exercice-7">
+        7 - Next.JS App Router - Navigation simple - About
+      </Link>
+      <Link href="/Exercices/Exercice-8">
+        8 - Galerie Images et Filtre - Gallery
+      </Link>
+      <Link href="/Exercices/Exercice-9">
+        9 - Simulation Panier - Add to Cart & ProductList
+      </Link>
+      <Link href="/Exercices/Exercice-10">
+        10 - Mini Projet - Blog très simple
+      </Link>
+      <Link href="/Exercices/Exercice-11">
+        11 - Projet - Catalogue de cartes (mini marketplace)
+      </Link>
     </div>
   );
 }
