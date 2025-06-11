@@ -34,6 +34,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-11">
         11 - Projet - Catalogue de cartes (mini marketplace)
       </Link>
+      <Link href="/Exercices/Exercice-12">
+        12 - Projet - Article filtre order recherche
+      </Link>
     </div>
   );
 }
