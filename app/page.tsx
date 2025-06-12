@@ -37,6 +37,7 @@ export default function Home() {
       <Link href="/Exercices/Exercice-12">
         12 - Projet - Article filtre order recherche
       </Link>
+      <Link href="/Exercices/Exercice-13">13 - Projet - Task Manager</Link>
     </div>
   );
 }
