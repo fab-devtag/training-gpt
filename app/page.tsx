@@ -38,6 +38,13 @@ export default function Home() {
         12 - Projet - Article filtre order recherche
       </Link>
       <Link href="/Exercices/Exercice-13">13 - Projet - Task Manager</Link>
+      <Link href="/Exercices/Exercice-14">
+        14 - Mini Challenge - Progress Bar
+      </Link>
+      <Link href="/Exercices/Exercice-15">15 - setInterval + useEffect</Link>
+      <Link href="/Exercices/Exercice-16">16 - LocalStorage</Link>
+      <Link href="/Exercices/Exercice-17">17 - Timer</Link>
+      <Link href="/Exercices/Exercice-18">18 - Compteur configurable</Link>
     </div>
   );
 }
