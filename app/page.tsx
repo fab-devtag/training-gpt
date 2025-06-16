@@ -45,6 +45,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-16">16 - LocalStorage</Link>
       <Link href="/Exercices/Exercice-17">17 - Timer</Link>
       <Link href="/Exercices/Exercice-18">18 - Compteur configurable</Link>
+      <Link href="/Exercices/Exercice-19">
+        19 -Dynamique Liste Tri et Filtre
+      </Link>
     </div>
   );
 }
