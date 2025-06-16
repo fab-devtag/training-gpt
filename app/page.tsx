@@ -54,6 +54,12 @@ export default function Home() {
       <Link href="/Exercices/Exercice-21">
         21 - Système de sélection multiple + suppression
       </Link>
+      <Link href="/Exercices/Exercice-22">
+        22 - Panier avec gestion des quantités
+      </Link>
+      <Link href="/Exercices/Exercice-23">
+        23 - Gestion des favoris sans doublons
+      </Link>
     </div>
   );
 }
