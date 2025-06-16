@@ -51,6 +51,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-20">
         20 - Catalogue de Produit avec ajout au panier
       </Link>
+      <Link href="/Exercices/Exercice-21">
+        21 - Système de sélection multiple + suppression
+      </Link>
     </div>
   );
 }
