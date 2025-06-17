@@ -60,6 +60,14 @@ export default function Home() {
       <Link href="/Exercices/Exercice-23">
         23 - Gestion des favoris sans doublons
       </Link>
+      <Link href="/Exercices/Exercice-24">
+        24 - Filtrage dynamique des favoris par prix
+      </Link>
+      <Link href="/Exercices/Exercice-25">
+        25 - Favoris + localStorage (Compilation d'exos à la suite sur le même
+        projet)
+      </Link>
+      <Link href="/Exercices/Exercice-26">26 - Mini Feature API projet)</Link>
     </div>
   );
 }
