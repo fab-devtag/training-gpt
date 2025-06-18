@@ -67,7 +67,12 @@ export default function Home() {
         25 - Favoris + localStorage (Compilation d'exos à la suite sur le même
         projet)
       </Link>
-      <Link href="/Exercices/Exercice-26">26 - Mini Feature API projet)</Link>
+      <Link href="/Exercices/Exercice-26">
+        26 - Mini Feature API projet - Post
+      </Link>
+      <Link href="/Exercices/Exercice-27">
+        27 - Challengfe : mini todo list
+      </Link>
     </div>
   );
 }

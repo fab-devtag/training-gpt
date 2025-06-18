@@ -1,0 +1,75 @@
+"use client";
+import { useMemo, useRef, useState } from "react";
+import { Todo } from "./types";
+import TodoItem from "./TodoItem";
+import TodoForm from "./TodoForm";
+import FilterBar from "./FilterBar";
+
+export default function TodoApp() {
+  const todosList: Todo[] = [
+    { id: 1, title: "Acheter du pain", done: false },
+    { id: 2, title: "Faire du sport", done: true },
+  ];
+
+  const [todos, setTodos] = useState<Todo[]>(todosList);
+  const [filter, setFilter] = useState<"Tous" | "Terminés" | "A faire">("Tous");
+
+  const addTask = (task: string) => {
+    const id = Math.max(0, ...todos.map((t) => t.id)) + 1;
+
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { id: id, title: task, done: false },
+    ]);
+  };
+
+  const toggleTask = (taskId: number) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === taskId ? { ...todo, done: !todo.done } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
+  const deleteTask = (taskId: number) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== taskId);
+    setTodos(updatedTodos);
+  };
+
+  const emptyTodos = () => {
+    setTodos([]);
+    setFilter("Tous");
+  };
+
+  const filteredTodos = useMemo(() => {
+    return todos.filter((todo) => {
+      if (filter === "Terminés") {
+        return todo.done;
+      }
+      if (filter === "A faire") return !todo.done;
+      return true;
+    });
+  }, [filter, todos]);
+
+  return (
+    <div>
+      <h1>Challenge : Mini Todo-List</h1>
+      <TodoForm onAddTask={addTask} />
+      {todos.length === 0 && <p>Aucune tâche pour le moment</p>}
+      <div className="space-y-3 mt-3">
+        <FilterBar filter={filter} updateFilter={setFilter} />
+        {filteredTodos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggleTask={toggleTask}
+            onDeleteTask={deleteTask}
+          />
+        ))}
+      </div>
+      <div>{todos.filter((todo) => !todo.done).length} tâches restantes</div>
+      <button className="bg-amber-500 text-amber-950 p-1" onClick={emptyTodos}>
+        Vider la liste
+      </button>
+    </div>
+  );
+}
