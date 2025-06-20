@@ -55,7 +55,19 @@ const TodoItem = ({ todo, onToggleTask, onDeleteTask, onEditTask }: Props) => {
     </div>
   ) : (
     <div className="flex gap-2 items-center">
-      <p>{todo.title}</p>
+      <div>
+        <p>{todo.title}</p>
+        <p>
+          {todo.createdAt && !isNaN(new Date(todo.createdAt).getTime()) ? (
+            <>
+              Ajouté le : {new Date(todo.createdAt).toLocaleDateString("fr-FR")}{" "}
+              à {new Date(todo.createdAt).toLocaleTimeString("fr-FR")}
+            </>
+          ) : (
+            "Date inconnue"
+          )}
+        </p>
+      </div>
       <button onClick={() => onToggleTask(todo.id)}>
         {todo.done ? "✅" : "❌"}
       </button>

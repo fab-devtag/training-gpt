@@ -1,10 +1,22 @@
-type FilterType = "Tous" | "Terminés" | "A faire";
+import { useState } from "react";
+import { FilterType, OrderType } from "./types";
 
 interface Props {
   filter: FilterType;
   updateFilter: (filter: "Tous" | "Terminés" | "A faire") => void;
+  searchTitle: string;
+  onSearch: (searchTitle: string) => void;
+  sortDateOrder: OrderType;
+  onSortDate: (sortDateOrder: OrderType) => void;
 }
-const FilterBar = ({ filter, updateFilter }: Props) => {
+const FilterBar = ({
+  filter,
+  updateFilter,
+  searchTitle,
+  onSearch,
+  sortDateOrder,
+  onSortDate,
+}: Props) => {
   return (
     <div className="space-x-4">
       <button
@@ -30,6 +42,25 @@ const FilterBar = ({ filter, updateFilter }: Props) => {
         }`}
       >
         A faire
+      </button>
+      <input
+        type="text"
+        value={searchTitle}
+        className="bg-white text-black"
+        onChange={(e) => onSearch(e.target.value)}
+      />
+      {searchTitle && (
+        <button
+          onClick={() => onSearch("")}
+          className="bg-purple-500 text-purple-950 p-1"
+        >
+          Effacer la recherche
+        </button>
+      )}
+      <button
+        onClick={() => onSortDate(sortDateOrder === "asc" ? "desc" : "asc")}
+      >
+        {sortDateOrder === "asc" ? "Croissant" : "Décroissant"}
       </button>
     </div>
   );
