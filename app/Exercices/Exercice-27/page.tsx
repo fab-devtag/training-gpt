@@ -35,6 +35,15 @@ export default function TodoApp() {
     setTodos(updatedTodos);
   };
 
+  const editTask = (taskId: number, title: string) => {
+    if (title) {
+      const updatedTodos = todos.map((todo) =>
+        todo.id === taskId ? { ...todo, title: title } : todo
+      );
+      setTodos(updatedTodos);
+    }
+  };
+
   const emptyTodos = () => {
     setTodos([]);
     setFilter("Tous");
@@ -63,6 +72,7 @@ export default function TodoApp() {
             todo={todo}
             onToggleTask={toggleTask}
             onDeleteTask={deleteTask}
+            onEditTask={editTask}
           />
         ))}
       </div>
