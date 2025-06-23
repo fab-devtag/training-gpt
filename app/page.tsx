@@ -79,6 +79,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-29">
         29 - Next.js React Server Component
       </Link>
+      <Link href="/Exercices/Exercice-30">
+        30 - Mini-projet : Dashboard + rapports
+      </Link>
     </div>
   );
 }
