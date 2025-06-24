@@ -80,7 +80,10 @@ export default function Home() {
         29 - Next.js React Server Component
       </Link>
       <Link href="/Exercices/Exercice-30">
-        30 - Mini-projet : Dashboard + rapports
+        30 - Mini-projet : Dashboard + rapports (fonctionne pas)
+      </Link>
+      <Link href="/Exercices/Exercice-31">
+        31 - Création custom hook (useDebounce)
       </Link>
     </div>
   );
