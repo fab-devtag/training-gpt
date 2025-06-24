@@ -86,8 +86,9 @@ export default function Home() {
         31 - Création custom hook (useDebounce)
       </Link>
       <Link href="/Exercices/Exercice-32">
-        32 - Blog Post - Custom Hook Generic & React Query / SWR
+        32 - Blog Post - Custom Hook Generic
       </Link>
+      <Link href="/Exercices/Exercice-33">33 - Blog Post - SWR / mutate</Link>
     </div>
   );
 }
