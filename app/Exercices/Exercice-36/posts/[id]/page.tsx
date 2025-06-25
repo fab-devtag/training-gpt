@@ -1,18 +1,26 @@
+"use client";
+import { use } from "react";
+import { useFetch } from "../../customHooks";
 import { Post } from "../../types";
+import Link from "next/link";
 
-export default async function PostDetailsPage({
+export default function PostDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+  const { id } = use(params);
+  const { data, isLoading, error } = useFetch<Post>(
+    `https://jsonplaceholder.typicode.com/posts/${id}`
   );
-  const post: Post = await response.json();
+
+  if (!data) return;
+
   return (
     <div>
-      <h1>La post sur : {post.title}</h1>
-      <p>{post.body}</p>
+      <Link href="/Exercices/Exercice-36">Retour à la liste</Link>
+      <h1>La post sur : {data.title}</h1>
+      <p>{data.body}</p>
     </div>
   );
 }

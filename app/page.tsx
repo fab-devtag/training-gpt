@@ -103,7 +103,7 @@ export default function Home() {
         35 - Blog Post - Custom hook genric avec React Query
       </Link>
       <Link href="/Exercices/Exercice-36">
-        36 - Blog Post - Custom hook genric avec SWR
+        36 - Blog Post - Custom hook genric avec SWR et NAvigation dynamique
       </Link>
     </div>
   );

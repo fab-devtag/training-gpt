@@ -22,7 +22,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1>=Blog Post - Custom hook genric avec React Query</h1>
+      <h1>
+        Blog Post - Custom hook genric avec React Query et Navigation dynamique
+      </h1>
       <div>
         <input
           className="bg-white text-black"
@@ -31,7 +33,7 @@ export default function Home() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {filterPosts.map((post: Post) => (
-          <Link key={post.id} href={`/Exercices/Exercice-32/posts/${post.id}`}>
+          <Link key={post.id} href={`/Exercices/Exercice-36/posts/${post.id}`}>
             <p>Titre: {post.title}</p>
             <p>Contenu: {post.body.slice(0, 50)}...</p>
           </Link>
