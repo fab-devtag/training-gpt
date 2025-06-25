@@ -97,9 +97,14 @@ export default function Home() {
         32 - Blog Post - Custom Hook Generic
       </Link>
       <Link href="/Exercices/Exercice-33">33 - Blog Post - SWR / mutate</Link>
-      <QueryClientProvider client={queryClient}>
-        <Link href="/Exercices/Exercice-34">34 - Blog Post - React Query</Link>
-      </QueryClientProvider>
+
+      <Link href="/Exercices/Exercice-34">34 - Blog Post - React Query</Link>
+      <Link href="/Exercices/Exercice-35">
+        35 - Blog Post - Custom hook genric avec React Query
+      </Link>
+      <Link href="/Exercices/Exercice-36">
+        36 - Blog Post - Custom hook genric avec SWR
+      </Link>
     </div>
   );
 }
