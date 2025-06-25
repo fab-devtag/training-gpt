@@ -1,6 +1,14 @@
 import Link from "next/link";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
 export default function Home() {
+  const queryClient = new QueryClient();
   return (
     <div className="flex flex-col">
       <Link href="/Exercices/Exercice-1">
@@ -89,6 +97,9 @@ export default function Home() {
         32 - Blog Post - Custom Hook Generic
       </Link>
       <Link href="/Exercices/Exercice-33">33 - Blog Post - SWR / mutate</Link>
+      <QueryClientProvider client={queryClient}>
+        <Link href="/Exercices/Exercice-34">34 - Blog Post - React Query</Link>
+      </QueryClientProvider>
     </div>
   );
 }
