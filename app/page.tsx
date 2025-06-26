@@ -105,6 +105,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-36">
         36 - Blog Post - Custom hook genric avec SWR et NAvigation dynamique
       </Link>
+      <Link href="/Exercices/Exercice-37">
+        37 - Blog Post - UseMutation ajout et suppression de posts
+      </Link>
     </div>
   );
 }
