@@ -120,7 +120,7 @@ export default function Home() {
 
         {filterPosts.map((post: Post) => (
           <div key={post.id}>
-            <Link href={`/Exercices/Exercice-36/posts/${post.id}`}>
+            <Link href={`/Exercices/Exercice-37/posts/${post.id}`}>
               <p>Titre: {post.title}</p>
               <p>Contenu: {post.body.slice(0, 50)}...</p>
             </Link>
