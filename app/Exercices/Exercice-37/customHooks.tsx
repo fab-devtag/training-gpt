@@ -5,6 +5,7 @@ export const useFetch = <T,>(url: string) => {
   const { data, error, isLoading } = useQuery<T>({
     queryKey: ["data", url],
     queryFn: fetcher,
+    placeholderData: (prev) => prev,
   });
 
   return { data, error, isLoading };

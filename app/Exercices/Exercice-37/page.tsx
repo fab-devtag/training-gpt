@@ -8,17 +8,26 @@ import { queryClient } from "@/app/queryClient";
 import PostItem from "./PostItem";
 
 export default function Home() {
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [currentPage, setCurrentPage] = useState<number>(0);
+
   const { data, isLoading, error } = useFetch<Post[]>(
-    "https://jsonplaceholder.typicode.com/posts"
+    `https://jsonplaceholder.typicode.com/posts`
   );
 
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const nbPage = Math.ceil((data ?? []).length / 10);
+  console.log(data);
 
   const filterPosts = useMemo(() => {
-    return (data ?? []).filter((post: Post) =>
+    console.log(nbPage);
+    const test = (data ?? []).filter((post: Post) =>
       post.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [searchTerm, data]);
+    const sort = test.slice(currentPage * 10, currentPage * 10 + 10);
+    console.log(currentPage);
+    console.log(nbPage);
+    return sort;
+  }, [searchTerm, data, currentPage]);
 
   const addPost = async () => {
     const newPost: Post = {
@@ -171,6 +180,16 @@ export default function Home() {
           />
         </div>
         <p>{editMutation.error?.message}</p>
+        {currentPage > 0 && (
+          <button onClick={() => setCurrentPage((prev) => prev - 1)}>
+            Précedent
+          </button>
+        )}
+        {currentPage < nbPage - 1 && (
+          <button onClick={() => setCurrentPage((prev) => prev + 1)}>
+            Suivant
+          </button>
+        )}
         {filterPosts.map((post: Post) => (
           <PostItem
             key={post.id}
