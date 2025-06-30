@@ -106,8 +106,9 @@ export default function Home() {
         36 - Blog Post - Custom hook genric avec SWR et NAvigation dynamique
       </Link>
       <Link href="/Exercices/Exercice-37">
-        37 - Blog Post - UseMutation ajout et suppression de posts
+        37 - Blog Post - UseMutation ajout et suppression de posts (pagination)
       </Link>
+      <Link href="/Exercices/Exercice-38">38 - Formulaire useReducer</Link>
     </div>
   );
 }
