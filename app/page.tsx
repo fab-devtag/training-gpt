@@ -6,6 +6,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { SessionProvider } from "next-auth/react";
 
 export default function Home() {
   const queryClient = new QueryClient();
@@ -109,6 +110,10 @@ export default function Home() {
         37 - Blog Post - UseMutation ajout et suppression de posts (pagination)
       </Link>
       <Link href="/Exercices/Exercice-38">38 - Formulaire useReducer</Link>
+
+      <Link href="/Exercices/Exercice-39">
+        39 - Login simple avec NextAuth.js (credentials provider)
+      </Link>
     </div>
   );
 }
