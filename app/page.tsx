@@ -114,6 +114,8 @@ export default function Home() {
       <Link href="/Exercices/Exercice-39">
         39 - Login simple avec NextAuth.js (credentials provider)
       </Link>
+      <Link href="/Exercices/Exercice-40">40 - SEO</Link>
+      <Link href="/Exercices/Exercice-41">41 - UseReducer à nouveau</Link>
     </div>
   );
 }
