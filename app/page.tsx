@@ -116,6 +116,7 @@ export default function Home() {
       </Link>
       <Link href="/Exercices/Exercice-40">40 - SEO</Link>
       <Link href="/Exercices/Exercice-41">41 - UseReducer à nouveau</Link>
+      <Link href="/Exercices/Exercice-42">42 - useRef & forwardRef</Link>
     </div>
   );
 }
