@@ -118,6 +118,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-41">41 - UseReducer à nouveau</Link>
       <Link href="/Exercices/Exercice-42">42 - useRef & forwardRef</Link>
       <Link href="/Exercices/Exercice-43">43 - useMemo et useCallback</Link>
+      <Link href="/Exercices/Exercice-44">
+        44 - Lazy loading + Suspense avec React / Next.js
+      </Link>
     </div>
   );
 }
