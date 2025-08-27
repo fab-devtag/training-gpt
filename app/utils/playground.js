@@ -381,5 +381,89 @@ function flattenArray(arr) {
     return flattenedArray;
 }
 
-console.log(flattenArray([1, [2, 3], [4, [5]]]))
+/* console.log(flattenArray([1, [2, 3], [4, [5]]])) */
 // Résultat attendu : [1, 2, 3, 4, [5]]
+
+function reverseWords(str) {
+    const words = str.trim().split(' ');
+    let newStr = '';
+    for(let i = words.length-1; i >= 0; i--){
+        if (words[i] !== ''){
+            newStr += words[i]+ ' '
+        }
+    }
+
+    return newStr.trim();
+}
+
+/* console.log(reverseWords("Bonjour tout le monde"))
+console.log(reverseWords('  Ceci   est   un test ')); */
+
+function countOccurences2(array, value){
+    let occurences = 0;
+    for(const item of array){
+        if(item === value) occurences++;
+    }
+
+    return occurences
+}
+
+/* console.log(countOccurences2([1, 2, 3, 4, 2, 2], 2)); // 3
+console.log(countOccurences2(['a', 'b', 'a', 'c'], 'a')); // 2
+console.log(countOccurences2(['x', 'y', 'z'], 'a')); // 0 */
+
+function sumNestedArray(array) {
+    let sum = 0;
+    for(const item of array){
+        if (Array.isArray(item)){
+            for(const subItem of item){
+                if (Array.isArray(subItem)){
+                    for(const subsubItem of subItem){
+                        sum += subsubItem
+                    }
+                }
+                else {
+                    sum += subItem
+                }
+            }
+        }
+        else {
+            sum += item;
+        }
+    }
+
+    return sum;
+}
+
+/* console.log(sumNestedArray([1, 2, [3, 4]])) // 10
+console.log(sumNestedArray([[1, 2], [3, 4], 5])) // 15
+console.log(sumNestedArray([1, [2, [3, 4]], 5])) // 15 (pas besoin de gérer + de 2 niveaux)
+console.log(sumNestedArray([[], 1, [2, []]])) // 3 */
+
+function findMax(array) {
+    let maxNumber = array.length > 0 ? array[0] : null;
+
+    for(const value of array){
+        if (value > maxNumber) maxNumber = value;
+    }
+
+    return maxNumber
+}
+
+/* console.log(findMax([1, 2, 3])) // 3
+console.log(findMax([-10, -5, -20])) // -5
+console.log(findMax([100])) // 100
+console.log(findMax([])) // null */
+
+function isSubset(array1, array2){
+    for(const element of array2){
+        if (!array1.includes(element)) return false
+    }
+
+    return true;
+}
+
+console.log(isSubset([1, 2, 3], [2, 1])) // true
+console.log(isSubset([1, 2, 3], [4])) // false
+console.log(isSubset([1, 2, 3], [])) // true
+console.log(isSubset([], [1])) // false
