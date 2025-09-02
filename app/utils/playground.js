@@ -387,9 +387,9 @@ function flattenArray(arr) {
 function reverseWords(str) {
     const words = str.trim().split(' ');
     let newStr = '';
-    for(let i = words.length-1; i >= 0; i--){
-        if (words[i] !== ''){
-            newStr += words[i]+ ' '
+    for (let i = words.length - 1; i >= 0; i--) {
+        if (words[i] !== '') {
+            newStr += words[i] + ' '
         }
     }
 
@@ -399,10 +399,10 @@ function reverseWords(str) {
 /* console.log(reverseWords("Bonjour tout le monde"))
 console.log(reverseWords('  Ceci   est   un test ')); */
 
-function countOccurences2(array, value){
+function countOccurences2(array, value) {
     let occurences = 0;
-    for(const item of array){
-        if(item === value) occurences++;
+    for (const item of array) {
+        if (item === value) occurences++;
     }
 
     return occurences
@@ -414,11 +414,11 @@ console.log(countOccurences2(['x', 'y', 'z'], 'a')); // 0 */
 
 function sumNestedArray(array) {
     let sum = 0;
-    for(const item of array){
-        if (Array.isArray(item)){
-            for(const subItem of item){
-                if (Array.isArray(subItem)){
-                    for(const subsubItem of subItem){
+    for (const item of array) {
+        if (Array.isArray(item)) {
+            for (const subItem of item) {
+                if (Array.isArray(subItem)) {
+                    for (const subsubItem of subItem) {
                         sum += subsubItem
                     }
                 }
@@ -443,7 +443,7 @@ console.log(sumNestedArray([[], 1, [2, []]])) // 3 */
 function findMax(array) {
     let maxNumber = array.length > 0 ? array[0] : null;
 
-    for(const value of array){
+    for (const value of array) {
         if (value > maxNumber) maxNumber = value;
     }
 
@@ -455,15 +455,180 @@ console.log(findMax([-10, -5, -20])) // -5
 console.log(findMax([100])) // 100
 console.log(findMax([])) // null */
 
-function isSubset(array1, array2){
-    for(const element of array2){
+function isSubset(array1, array2) {
+    for (const element of array2) {
         if (!array1.includes(element)) return false
     }
 
     return true;
 }
 
-console.log(isSubset([1, 2, 3], [2, 1])) // true
+/* console.log(isSubset([1, 2, 3], [2, 1])) // true
 console.log(isSubset([1, 2, 3], [4])) // false
 console.log(isSubset([1, 2, 3], [])) // true
-console.log(isSubset([], [1])) // false
+console.log(isSubset([], [1])) // false */
+
+function isSubset(arr1, arr2) {
+    for (let element of arr2) {
+        if (!arr1.includes(element)) return false;
+    }
+
+    return true;
+}
+
+/* console.log(isSubset([1, 2, 3], [2, 1])) // true
+console.log(isSubset([1, 2, 3], [4])) // false
+console.log(isSubset([1, 2, 3], [])) // true
+console.log(isSubset([], [1])) // false */
+
+function fizzBuzz(length) {
+    let array = [];
+
+    for (let i = 1; i <= length; i++) {
+        if (i % 3 === 0 && i % 5 === 0) array.push("FizzBuzz");
+        else if (i % 3 === 0) array.push("Fizz");
+        else if (i % 5 === 0) array.push("Buzz");
+        else array.push(i);
+    }
+
+    return array;
+}
+
+/* console.log(fizzBuzz(5))
+// [1, 2, "Fizz", 4, "Buzz"]
+
+console.log(fizzBuzz(15))
+// [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"] */
+
+function getUniqueValues(arr) {
+    const counts = {};
+    const result = [];
+
+    // Compter les occurrences
+    for (const value of arr) {
+        counts[value] = (counts[value] || 0) + 1;
+    }
+
+    // Garder uniquement les valeurs uniques
+    for (const value of arr) {
+        if (counts[value] === 1) {
+            result.push(value);
+        }
+    }
+
+    return result;
+}
+
+
+/* console.log(getUniqueValues([1, 2, 2, 3, 4, 4, 5])) */
+// [1, 3, 5]
+
+
+function findDuplicatesV3(arr) {
+    let counts = {};
+    let duplicates = [];
+
+    for (let element of arr) {
+        counts[element] = (counts[element] || 0) + 1
+
+    }
+    for (const [key, value] of Object.entries(counts)) {
+
+        if (value > 1) {
+            duplicates.push(key)
+        }
+    }
+
+    return duplicates;
+}
+
+
+/* console.log(findDuplicatesV3([1, 2, 3, 2, 4, 1]));
+// → [1, 2] (ou [2, 1], l'ordre n'importe pas)
+
+console.log(findDuplicatesV3(["a", "b", "a", "c", "b", "d"]));
+// → ["a", "b"]
+
+console.log(findDuplicatesV3([5, 6, 7])); */
+// → []  (pas de doublons)
+
+function isAnagramV2(str1, str2) {
+
+
+
+}
+
+
+function testReduce() {
+    const prices = [5, 10, 25];
+
+    const sum = prices.reduce((acc, price) => acc + price, 0)
+    return sum;
+}
+
+console.log(testReduce())
+/* console.log(isAnagramV2("listen", "silent")); */   // true
+/* isAnagramV2("hello", "bello");     // false
+isAnagramV2("Debit Card", "Bad Credit"); // true
+isAnagramV2("Astronomer", "Moon starer"); // true */
+
+function fibonacciRecursive(n) {
+    let array = [];
+
+    for (let i = 0; i < n; i++) {
+        if (array.length === 0) {
+            array.push(0)
+        }
+        else {
+            let previous = array[i - 2] ?? 1
+            array.push(array[i - 1] + previous)
+        }
+    }
+
+    return array[n - 1]
+}
+
+/* function fibonacciRecursive(n) {
+  if (n <= 1) return n;
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+}
+
+console.log(fibonacciRecursive(7)) */
+
+//0 1 1 2 3 5 8
+
+function twoSum(arr, targetValue) {
+    let number = 0;
+    /* for (let i = number + 1; i < arr.length; i++) {
+        if (arr[number] + arr[i] === targetValue) {
+            return console.log(arr.indexOf(arr[number]), arr.indexOf(arr[i]))
+        }
+    } */
+
+    let i = number + 1;
+    while (i < arr.length) {
+        if (arr[number] + arr[i] === targetValue) {
+            return console.log(arr.indexOf(arr[number]), arr.indexOf(arr[i]))
+        }
+        else {
+            if (i === arr.length - 1 && arr[number] + arr[i] !== targetValue) {
+                number++
+                i = number + 1
+            }
+            else {
+                i++
+            }
+        }
+    }
+}
+
+console.log(test1)
+var test1 = 0
+
+function1()
+
+function function1() {
+    console.log('dsofidoi')
+}
+
+twoSum([1, 3, 7], 10)

@@ -121,6 +121,22 @@ export default function Home() {
       <Link href="/Exercices/Exercice-44">
         44 - Lazy loading + Suspense avec React / Next.js
       </Link>
+      <Link href="/Exercices/Exercice-45-4">
+        45-4 - Mini Live Coding : ProductSearch & Highlight text
+      </Link>
+      <Link href="/Exercices/Exercice-46-4">
+        46-4 - Mini Live Coding : Pagination côté serveur avec React Query
+      </Link>
+      <Link href="/Exercices/Exercice-47-4">
+        47-4 - Mini Live Coding : TodoList avec filtrage et ajout dynamique
+      </Link>
+      <Link href="/Exercices/Exercice-48-4">48-4 - Evaluation - TodoList</Link>
+      <Link href="/Exercices/Exercice-49-4">
+        49-4 - Evaluation - Compteur avancé avec useReducer
+      </Link>
+      <Link href="/Exercices/Exercice-50-4">
+        50-4 - Evaluation - Optimisation d’une TodoList
+      </Link>
     </div>
   );
 }
