@@ -137,6 +137,15 @@ export default function Home() {
       <Link href="/Exercices/Exercice-50-4">
         50-4 - Evaluation - Optimisation d’une TodoList
       </Link>
+      <Link href="/Exercices/Exercice-51-4">
+        51-4 - Evaluation - SEO / métadonnées dans Next.js
+      </Link>
+      <Link href="/Exercices/Exercice-52-4">
+        52-4 - Evaluation - SEO / métadonnées dans Next.js
+      </Link>
+      <Link href="/Exercices/Exercice-53-4">
+        53-4 - Evaluation - Projet “Journal de bord”
+      </Link>
     </div>
   );
 }

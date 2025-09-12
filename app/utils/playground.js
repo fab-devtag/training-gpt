@@ -566,7 +566,7 @@ function testReduce() {
     return sum;
 }
 
-console.log(testReduce())
+/* console.log(testReduce()) */
 /* console.log(isAnagramV2("listen", "silent")); */   // true
 /* isAnagramV2("hello", "bello");     // false
 isAnagramV2("Debit Card", "Bad Credit"); // true
@@ -622,7 +622,7 @@ function twoSum(arr, targetValue) {
     }
 }
 
-console.log(test1)
+/* console.log(test1)
 var test1 = 0
 
 function1()
@@ -631,4 +631,28 @@ function function1() {
     console.log('dsofidoi')
 }
 
-twoSum([1, 3, 7], 10)
+twoSum([1, 3, 7], 10) */
+
+function createScore() {
+    let score = 0;
+    return {
+        increment() {
+            score++
+            return score;
+        },
+        getScore() {
+            return score;
+        }
+    }
+
+}
+
+const player1 = createScore();
+const player2 = createScore();
+
+player1.increment();
+player1.increment();
+player2.increment();
+
+console.log("Player 1:", player1.getScore()); // 2
+console.log("Player 2:", player2.getScore()); // 1
