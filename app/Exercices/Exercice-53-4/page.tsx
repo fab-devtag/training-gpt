@@ -21,6 +21,8 @@ export default function Home() {
   });
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [sortedNotesBy, setSortedNotesBy] = useState<Filter>("Toutes");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const notesPerPage = 5;
 
   const fetchNotes = async (): Promise<Note[]> => {
     return new Promise((resolve) => setTimeout(() => resolve([...notes]), 300));
@@ -66,20 +68,28 @@ export default function Home() {
     );
   }, []);
 
-  const filteredNotes = useMemo(() => {
-    const sortedNotes = notesList.filter((note) => {
-      if (sortedNotesBy === "Privées") return note.isPrivate;
-      else if (sortedNotesBy === "Publiques") return !note.isPrivate;
-      return true;
-    });
-
-    return sortedNotes.filter(
-      (note) =>
-        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        note.content.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+  //Pour avoir le nombre total d'élements
+  const totalFilteredNotes = useMemo(() => {
+    return notesList
+      .filter((note) => {
+        if (sortedNotesBy === "Privées") return note.isPrivate;
+        if (sortedNotesBy === "Publiques") return !note.isPrivate;
+        return true;
+      })
+      .filter(
+        (note) =>
+          note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          note.content.toLowerCase().includes(searchTerm.toLowerCase())
+      );
   }, [notesList, searchTerm, sortedNotesBy]);
 
+  //Récupérer les éléments courants dont on a besoin pour la pagination
+  const filteredNotes = useMemo(() => {
+    return totalFilteredNotes.slice(
+      (currentPage - 1) * notesPerPage,
+      currentPage * notesPerPage
+    );
+  }, [totalFilteredNotes, currentPage]);
   return (
     <div className="space-y-2">
       <h1>Journal de bord</h1>
@@ -138,6 +148,18 @@ export default function Home() {
         <button type="submit">Ajouter</button>
       </form>
       <h2>Liste des notes</h2>
+      <div>
+        {currentPage !== 1 && (
+          <button onClick={() => setCurrentPage((prev) => prev - 1)}>
+            Précédent
+          </button>
+        )}
+        {currentPage < Math.ceil(totalFilteredNotes.length / notesPerPage) && (
+          <button onClick={() => setCurrentPage((prev) => prev + 1)}>
+            Suivant
+          </button>
+        )}
+      </div>
       {filteredNotes.map((note) => (
         <NoteItem
           key={note.id}

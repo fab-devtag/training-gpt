@@ -146,6 +146,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-53-4">
         53-4 - Evaluation - Projet “Journal de bord”
       </Link>
+      <Link href="/Exercices/Exercice-54-4">
+        53-4 - Evaluation - Liste d’articles filtrable
+      </Link>
     </div>
   );
 }
