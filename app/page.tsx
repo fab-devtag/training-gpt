@@ -147,7 +147,11 @@ export default function Home() {
         53-4 - Evaluation - Projet “Journal de bord”
       </Link>
       <Link href="/Exercices/Exercice-54-4">
-        53-4 - Evaluation - Liste d’articles filtrable
+        53-4 - Evaluation - Liste d’articles filtrable (useReducer, memo,
+        callback)
+      </Link>
+      <Link href="/Exercices/Exercice-55-4">
+        53-4 - Evaluation - Liste d’articles filtrable (Context)
       </Link>
     </div>
   );
