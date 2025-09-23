@@ -153,6 +153,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-55-4">
         53-4 - Evaluation - Liste d’articles filtrable (Context)
       </Link>
+      <Link href="/Exercices/Exercice-Coding-Interview">
+        Exercice Test Live Coding Interview
+      </Link>
     </div>
   );
 }
