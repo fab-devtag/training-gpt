@@ -647,12 +647,125 @@ function createScore() {
 
 }
 
-const player1 = createScore();
-const player2 = createScore();
-
+/* const player1 = createScore();
+const player2 = createScore(); */
+/* 
 player1.increment();
 player1.increment();
-player2.increment();
-
+player2.increment(); */
+/* 
 console.log("Player 1:", player1.getScore()); // 2
-console.log("Player 2:", player2.getScore()); // 1
+console.log("Player 2:", player2.getScore()); // 1 */
+
+//Filtrer et transformer
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const doubleEvenNumbers = numbers.filter(number => number % 2 === 0).map(number => number * 2);
+
+console.log(doubleEvenNumbers)
+
+//Somme et moyenne
+
+const products = [
+    { name: 'Laptop', price: 1200 },
+    { name: 'Phone', price: 800 },
+    { name: 'Shoes', price: 120 },
+];
+
+const totalPrice = products.reduce((total, product) => total + product.price, 0)
+const averagePrice = Math.round(totalPrice / products.length);
+
+console.log(totalPrice)
+console.log(averagePrice)
+
+//Regroupement par catégorie
+
+const items = [
+    { name: 'Laptop', category: 'Tech' },
+    { name: 'Phone', category: 'Tech' },
+    { name: 'Shoes', category: 'Clothes' },
+    { name: 'Shirt', category: 'Clothes' },
+];
+
+const group = new Map();
+
+for (let item of items) {
+    let categorie = group.get(item.category)
+    if (!categorie) {
+        group.set(item.category, [item.name])
+    }
+    else {
+        group.set(item.category, [...categorie, item.name])
+    }
+}
+
+console.log(group)
+
+//Suppression de doublons
+
+const ids = [1, 2, 2, 3, 4, 4, 5]
+
+const idsWithoutDouble = Array.from(new Set(ids));
+
+console.log(idsWithoutDouble)
+
+//Tri multi-critères
+
+const produits = [
+    { name: 'A', price: 120, rating: 4 },
+    { name: 'B', price: 120, rating: 5 },
+    { name: 'C', price: 100, rating: 3 },
+];
+
+const sorted = [...produits].sort((a, b) => {
+    if (a.price !== b.price) return a.price - b.price;
+    return b.rating - a.rating;
+});
+
+console.log(sorted)
+
+
+//Tri multi ctitères 2
+
+const people = [
+    { name: 'Alice', age: 30 },
+    { name: 'Bob', age: 25 },
+    { name: 'Charlie', age: 30 },
+    { name: 'David', age: 25 },
+];
+
+const sortPeople = [...people].sort((a, b) => {
+    if (a.age !== b.age) return a.age - b.age
+    return a.name.localeCompare(b.name)
+})
+
+console.log(sortPeople)
+
+const products3 = [
+    { name: 'Laptop', category: 'Tech', price: 1200 },
+    { name: 'Shoes', category: 'Clothes', price: 120 },
+    { name: 'Phone', category: 'Tech', price: 800 },
+    { name: 'Shirt', category: 'Clothes', price: 40 },
+];
+
+const sortProduct3 = [...products3].sort((a, b) => {
+    if (a.category !== b.category) return a.category.localeCompare(b.category)
+    return b.price - a.price
+})
+
+console.log(sortProduct3)
+
+const students = [
+    { name: 'Alice', grade: 18 },
+    { name: 'Bob', grade: 12 },
+    { name: 'Charlie', grade: 18 },
+    { name: 'David', grade: 15 },
+];
+
+const sortStudents = [...students].sort((a, b) => {
+    if (a.grade !== b.grade) return b.grade - a.grade
+    return a.name.localeCompare(b.name)
+})
+
+console.log(sortStudents)
