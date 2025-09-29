@@ -663,7 +663,7 @@ const numbers = [1, 2, 3, 4, 5, 6];
 
 const doubleEvenNumbers = numbers.filter(number => number % 2 === 0).map(number => number * 2);
 
-console.log(doubleEvenNumbers)
+/* console.log(doubleEvenNumbers) */
 
 //Somme et moyenne
 
@@ -675,9 +675,9 @@ const products = [
 
 const totalPrice = products.reduce((total, product) => total + product.price, 0)
 const averagePrice = Math.round(totalPrice / products.length);
-
+/* 
 console.log(totalPrice)
-console.log(averagePrice)
+console.log(averagePrice) */
 
 //Regroupement par catégorie
 
@@ -700,7 +700,7 @@ for (let item of items) {
     }
 }
 
-console.log(group)
+/* console.log(group) */
 
 //Suppression de doublons
 
@@ -708,7 +708,7 @@ const ids = [1, 2, 2, 3, 4, 4, 5]
 
 const idsWithoutDouble = Array.from(new Set(ids));
 
-console.log(idsWithoutDouble)
+/* console.log(idsWithoutDouble) */
 
 //Tri multi-critères
 
@@ -723,7 +723,7 @@ const sorted = [...produits].sort((a, b) => {
     return b.rating - a.rating;
 });
 
-console.log(sorted)
+/* console.log(sorted) */
 
 
 //Tri multi ctitères 2
@@ -740,7 +740,7 @@ const sortPeople = [...people].sort((a, b) => {
     return a.name.localeCompare(b.name)
 })
 
-console.log(sortPeople)
+/* console.log(sortPeople) */
 
 const products3 = [
     { name: 'Laptop', category: 'Tech', price: 1200 },
@@ -754,7 +754,7 @@ const sortProduct3 = [...products3].sort((a, b) => {
     return b.price - a.price
 })
 
-console.log(sortProduct3)
+/* console.log(sortProduct3) */
 
 const students = [
     { name: 'Alice', grade: 18 },
@@ -767,5 +767,192 @@ const sortStudents = [...students].sort((a, b) => {
     if (a.grade !== b.grade) return b.grade - a.grade
     return a.name.localeCompare(b.name)
 })
+/* 
+console.log(sortStudents) */
 
-console.log(sortStudents)
+
+//Somme et moyenne
+
+const nums = [10, 20, 30, 40, 50];
+
+const sum = nums.reduce((total, num) => total + num, 0);
+/* console.log(sum) */
+const average = Math.round(sum / nums.length)
+/* console.log(average) */
+
+
+//Compter nombre d'occurences 
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const occurences = fruits.reduce((map, fruit) => {
+    if (!map.has(fruit)) map.set(fruit, 1)
+    else map.set(fruit, map.get(fruit) + 1)
+    return map;
+}, new Map())
+
+/* console.log(occurences) */
+
+//Grouper par catégorie 
+
+const products4 = [
+    { name: 'Laptop', category: 'Tech' },
+    { name: 'Phone', category: 'Tech' },
+    { name: 'Shoes', category: 'Clothes' },
+    { name: 'Shirt', category: 'Clothes' },
+];
+
+const groupByCat = products4.reduce((map, product) => {
+    if (!map.has(product.category)) map.set(product.category, [product.name])
+    else map.set(product.category, [...map.get(product.category), product.name])
+    return map;
+}, new Map())
+
+/* console.log(groupByCat) */
+
+// Promesse simple
+
+function delayHello() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('Hello')
+        }, 1000)
+    })
+}
+
+/* delayHello().then(message => console.log(message)); */
+
+
+//Pagination front-end
+
+function paginateArray(array, pageNumber, pageSize) {
+
+    const elements = array.slice((pageNumber - 1) * pageSize, pageSize * pageNumber)
+    return elements
+}
+
+// Exemple d'utilisation
+const pages = Array.from({ length: 50 }, (_, i) => i + 1);
+
+/* console.log(paginateArray(pages, 1, 10)); // Page 1 → [1..10]
+console.log(paginateArray(pages, 2, 10)); // Page 2 → [11..20]
+console.log(paginateArray(pages, 5, 10)); // Page 5 → [41..50] */
+
+
+
+//Checker si c'est un palindrome
+
+function isPalindromeV2(str) {
+    for (let i = 0; i < str.length / 2; i++) {
+        if (str[i].toLowerCase() !== str[str.length - 1 - i].toLowerCase()) return false
+    }
+    return true;
+}
+
+/* console.log(isPalindromeV2('radar'));
+console.log(isPalindromeV2('salut')); */
+
+
+//Checker si c'est un anagramme
+
+function isAnagramV3(str1, str2) {
+    let occurences1 = new Map()
+    let occurences2 = new Map()
+
+    if (str1.toLowerCase().length !== str2.toLowerCase().length) return false;
+
+    const sortedStr1 = str1.split('').sort().join('')
+    const sortedStr2 = str2.split('').sort().join('')
+
+    return sortedStr1 === sortedStr2;
+    //ICI CEST INUTILE DU COUP
+    /*  for (let char of sortedStr1) {
+         occurences1.set(char, (occurences1.get(char) || 0) + 1)
+     }
+ 
+     for (let char of sortedStr2) {
+         occurences2.set(char, (occurences2.get(char) || 0) + 1)
+     }
+ 
+     for (let [key, value] of occurences1) {
+         if (!occurences2.has(key)) return false
+         if (occurences2.get(key) !== value) return false
+     }
+ 
+     return true; */
+}
+
+/* AUTRE METHODE
+
+function isAnagram(str1, str2) {
+  if (str1.length !== str2.length) return false;
+
+  let counts = new Map();
+
+  for (let char of str1.toLowerCase()) {
+    counts.set(char, (counts.get(char) || 0) + 1);
+  }
+
+  for (let char of str2.toLowerCase()) {
+    if (!counts.has(char)) return false;
+    counts.set(char, counts.get(char) - 1);
+    if (counts.get(char) === 0) counts.delete(char);
+  }
+
+  return counts.size === 0;
+}*/
+
+
+
+/* console.log(isAnagramV3('salutu', 'tluasu'))
+console.log(isAnagramV3('azerty', 'azsdedsfr'))
+console.log(isAnagramV3('fabien', 'delphi'))
+ */
+function mergeSortedArrays(arr1, arr2) {
+    let arrayLength = arr1.length + arr2.length
+    let finalArray = [];
+
+    let index1 = 0;
+    let index2 = 0;
+    for (let i = 0; i < arrayLength; i++) {
+        if (arr1[index1] <= arr2[index2]) {
+            finalArray.push(arr1[index1])
+            index1++
+        }
+        else {
+            finalArray.push(arr2[index2])
+            index2++
+        }
+    }
+
+    return finalArray
+}
+
+/* console.log(mergeSortedArrays([1, 2, 3, 6, 7], [1, 4, 5, 8, 9])) */
+
+//CORRECTION MERGDES SORTED ARRAYS
+
+function mergeSortedArraysV2(arr1, arr2) {
+    let index1 = 0;
+    let index2 = 0;
+    let finalArray = [];
+
+    while (index1 < arr1.length && index2 < arr2.length) {
+        if (arr1[index1] <= arr2[index2]) {
+            finalArray.push(arr1[index1]);
+            index1++;
+        } else {
+            finalArray.push(arr2[index2]);
+            index2++;
+        }
+    }
+
+    // S'il reste des éléments dans arr1
+    finalArray.push(...arr1.slice(index1));
+    // ou dans arr2
+    finalArray.push(...arr2.slice(index2));
+
+    return finalArray;
+}
+
+console.log(mergeSortedArraysV2([1, 2, 3, 6, 7], [1, 4, 5, 8, 9]))
