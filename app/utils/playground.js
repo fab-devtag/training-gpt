@@ -956,3 +956,73 @@ function mergeSortedArraysV2(arr1, arr2) {
 }
 
 console.log(mergeSortedArraysV2([1, 2, 3, 6, 7], [1, 4, 5, 8, 9]))
+
+
+//Nombre de voyelles dans la chaîne
+
+function countVowels(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i])) count++
+    }
+
+    return count;
+}
+
+/* console.log(countVowels('sluaeit')) */
+
+//Trouver le 2ème plus grand nombre
+
+function secondLargest(arr) {
+
+    const sortedArray = [...arr].sort((a, b) => b - a)
+    return sortedArray[1]
+
+
+}
+
+secondLargest([4, 7, 1, 5])
+
+
+function secondLargestV2(arr) {
+    let max = -Infinity;
+    let second = -Infinity;
+
+    for (let number of arr) {
+        if (number > max) {
+            second = max;
+            max = number;
+        }
+        else {
+            if (number > second) {
+                second = number;
+            }
+        }
+    }
+
+    return second;
+
+}
+
+secondLargestV2([4, 7, 1, 5])
+
+function paginateAndFilter(array, pageNumber, pageSize, filterFn) {
+    const filteredArray = array.filter(filterFn);
+    return filteredArray.slice(pageNumber * pageSize, (pageNumber * pageSize) + pageSize)
+
+}
+
+const pagesV2 = Array.from({ length: 50 }, (_, i) => i + 1);
+
+console.log(paginateAndFilter(pagesV2, 1, 10, (n) => n % 2 === 0))
+
+
+function fetchAll(promises) {
+    return Promise.all(promises)
+}
+
+fetchAll([Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]).then(result => console.log(result))
+
+
