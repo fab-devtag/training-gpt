@@ -955,7 +955,7 @@ function mergeSortedArraysV2(arr1, arr2) {
     return finalArray;
 }
 
-console.log(mergeSortedArraysV2([1, 2, 3, 6, 7], [1, 4, 5, 8, 9]))
+/* console.log(mergeSortedArraysV2([1, 2, 3, 6, 7], [1, 4, 5, 8, 9])) */
 
 
 //Nombre de voyelles dans la chaîne
@@ -983,8 +983,8 @@ function secondLargest(arr) {
 
 }
 
-secondLargest([4, 7, 1, 5])
-
+/* secondLargest([4, 7, 1, 5])
+ */
 
 function secondLargestV2(arr) {
     let max = -Infinity;
@@ -1006,7 +1006,7 @@ function secondLargestV2(arr) {
 
 }
 
-secondLargestV2([4, 7, 1, 5])
+/* secondLargestV2([4, 7, 1, 5]) */
 
 function paginateAndFilter(array, pageNumber, pageSize, filterFn) {
     const filteredArray = array.filter(filterFn);
@@ -1016,13 +1016,40 @@ function paginateAndFilter(array, pageNumber, pageSize, filterFn) {
 
 const pagesV2 = Array.from({ length: 50 }, (_, i) => i + 1);
 
-console.log(paginateAndFilter(pagesV2, 1, 10, (n) => n % 2 === 0))
+/* console.log(paginateAndFilter(pagesV2, 1, 10, (n) => n % 2 === 0)) */
 
 
 function fetchAll(promises) {
     return Promise.all(promises)
 }
 
-fetchAll([Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]).then(result => console.log(result))
+/* fetchAll([Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)]).then(result => console.log(result)) */
 
+
+var numWaterBottles = function (numBottles, numExchange) {
+    //Nombre de bouteilles vides
+    let empty = numBottles;
+    console.log('Nombre de bouteilles vides ', numBottles)
+    //Nombre de bouteilles bues
+    let drinkedBottles = numBottles;
+    console.log('Nombre de bouteilles bues ', drinkedBottles)
+
+    //Tant qu'on peut échanger des bouteilles on continue
+    while (empty >= numExchange) {
+        //Combien de bouteilles pleines on peut avoir en échange des vides qu'on a 
+        let newFullBottle = Math.floor(empty / numExchange);
+        console.log('Combien de bouteilles pleines on peut avoir en échange des vides quon a ', newFullBottle)
+        //On boit les bouteilles et on ajoute au compte total
+        drinkedBottles += newFullBottle;
+        console.log('On boit les bouteilles et on ajoute au compte total ', drinkedBottles)
+        //Les bouteilles vides actuelles sont celle qu'on vient de boire et celles qui nous restait potentiellement
+        empty = newFullBottle + (empty % numExchange);
+        console.log('Les bouteilles vides actuelles sont celle quon vient de boire et celles qui nous restait potentiellement ', empty)
+    }
+
+    console.log(drinkedBottles)
+};
+
+/* numWaterBottles(9, 3) */
+numWaterBottles(15, 4)
 
