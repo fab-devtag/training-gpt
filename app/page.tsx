@@ -156,6 +156,9 @@ export default function Home() {
       <Link href="/Exercices/Exercice-Coding-Interview">
         Exercice Test Live Coding Interview
       </Link>
+      <Link href="/Exercices/Exercice-Coding-Interview-2">
+        Exercice Test Live Coding Interview - 2
+      </Link>
     </div>
   );
 }
