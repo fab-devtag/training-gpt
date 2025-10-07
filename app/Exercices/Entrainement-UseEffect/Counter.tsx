@@ -11,5 +11,3 @@ export function Counter() {
 
   return <button onClick={() => setCount(count + 1)}>{count}</button>;
 }
-
-//Le problème ici c'est qu'à chaque render, useEffect va se lancer, y compris même si on incrémente pas le counter
