@@ -159,6 +159,15 @@ export default function Home() {
       <Link href="/Exercices/Exercice-Coding-Interview-2">
         Exercice Test Live Coding Interview - 2
       </Link>
+      <Link href="/Exercices/Entrainement-Typescript">
+        Entrainemenent - PrepClaude / Typescript
+      </Link>
+      <Link href="/Exercices/Entrainement-Typage-React">
+        Entrainemenent - PrepClaude / Typage React
+      </Link>
+      <Link href="/Exercices/Entrainement-UseEffect">
+        Entrainemenent - PrepClaude / UseEffect
+      </Link>
     </div>
   );
 }
