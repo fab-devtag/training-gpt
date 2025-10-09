@@ -5,7 +5,7 @@ export function ProductList() {
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState("");
 
-  const filteredProducts = products.filter((p) => p.name.includes(filter));
+  const filteredProducts = products.filter((p: any) => p.name.includes(filter));
 
   useEffect(() => {
     console.log("Filtered products:", filteredProducts);
@@ -15,7 +15,7 @@ export function ProductList() {
     <div>
       <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       <ul>
-        {filteredProducts.map((p) => (
+        {filteredProducts.map((p: any) => (
           <li key={p.id}>{p.name}</li>
         ))}
       </ul>

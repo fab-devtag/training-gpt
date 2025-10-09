@@ -1053,3 +1053,50 @@ var numWaterBottles = function (numBottles, numExchange) {
 /* numWaterBottles(9, 3) */
 numWaterBottles(15, 4)
 
+function example1() {
+    for (var i = 0; i < 3; i++) {
+        setTimeout(() => console.log(i), 0);
+    }
+}
+/* example1(); */
+
+function example2() {
+    for (let i = 0; i < 3; i++) {
+        setTimeout(() => console.log(i), 0);
+    }
+}
+/* example2(); */
+
+function example3() {
+    for (var i = 0; i < 3; i++) {
+        (function (j) {
+            setTimeout(() => console.log(j), 0);
+        })(i);
+    }
+}
+/* example3(); */
+
+function example4() {
+    var x = 1;
+    return function () {
+        x *= 2;
+        return x;
+    }
+}
+
+const g4 = example4();
+console.log(g4());
+console.log(g4());
+console.log(g4());
+
+function example5() {
+    var funcs = [];
+    for (var i = 0; i < 2; i++) {
+        let j = i * 2;
+        funcs.push(() => j);
+    }
+    return funcs;
+}
+
+const [f1, f2] = example5();
+console.log(f1(), f2());

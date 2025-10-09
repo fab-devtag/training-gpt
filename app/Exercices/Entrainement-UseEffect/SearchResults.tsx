@@ -12,7 +12,7 @@ export function SearchResults({ query }: { query: string }) {
 
   return (
     <ul>
-      {results.map((r) => (
+      {results.map((r: any) => (
         <li key={r.id}>{r.title}</li>
       ))}
     </ul>

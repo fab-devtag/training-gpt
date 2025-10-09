@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 // Problème 2
 export function UserProfile({ userId }: { userId: number }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
     fetch(`/api/users/${userId}`)

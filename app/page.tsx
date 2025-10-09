@@ -168,6 +168,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-UseEffect">
         Entrainemenent - PrepClaude / UseEffect
       </Link>
+      <Link href="/Exercices/Entrainement-Testing">
+        Entrainemenent - PrepClaude / Testing Library
+      </Link>
     </div>
   );
 }
