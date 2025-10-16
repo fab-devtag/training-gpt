@@ -7,15 +7,26 @@ interface SearchResult {
   description: string;
 }
 
-export const SearchBar = () => {
+interface SearchBarProps {
+  onSearch?: (query: string) => void; // ✅ Prop optionnelle pour les tests
+}
+
+export const SearchBar = ({ onSearch }: SearchBarProps = {}) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (!query.trim()) return;
+
     setLoading(true);
 
     const timeout = setTimeout(() => {
+      // ✅ Appeler onSearch si elle existe (pour les tests)
+      if (onSearch) {
+        onSearch(query);
+      }
+
       searchAPI(query).then((res) => {
         setResults(res);
         setLoading(false);
@@ -25,7 +36,7 @@ export const SearchBar = () => {
     return () => {
       clearTimeout(timeout);
     };
-  }, [query]);
+  }, [query, onSearch]);
 
   return (
     <div>
