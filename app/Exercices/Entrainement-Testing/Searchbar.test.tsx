@@ -26,7 +26,5 @@ describe("SearchBar", () => {
 
     // Maintenant onSearch devrait être appelé
     expect(mockSearch).toHaveBeenCalledWith("react");
-
-    jest.useRealTimers();
   });
 });

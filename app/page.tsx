@@ -171,6 +171,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-Testing">
         Entrainemenent - PrepClaude / Testing Library
       </Link>
+      <Link href="/Exercices/Entrainement-Server-Client-Component">
+        Entrainemenent - PrepClaude / Server & Client Component
+      </Link>
     </div>
   );
 }
