@@ -20,12 +20,14 @@ export const TodoFilters = ({
   ];
 
   return (
-    <div className="space-x-3">
+    <div className="space-x-3 w-full flex justify-center">
       {filters.map((filter) => (
         <button
           key={filter.id}
           onClick={() => onChangeFilter(filter.name)}
-          className={`${currentFilter === filter.name ? "font-bold" : ""}`}
+          className={`font-bold min-w-[112px] cursor-pointer uppercase border px-2 py-1 rounded-lg hover:bg-green-500 text-black ${
+            currentFilter === filter.name ? "bg-green-500" : "bg-white"
+          }`}
         >
           {filter.value}
         </button>

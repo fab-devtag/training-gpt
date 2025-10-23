@@ -20,9 +20,19 @@ export const TodoInput = memo(({ onAddTodo }: TodoInputProps) => {
   };
 
   return (
-    <div>
-      <input value={todoToAdd} onChange={(e) => setTodoToAdd(e.target.value)} />
-      <button onClick={addTodo}>Ajouter todo</button>
+    <div className="space-x-2 mt-16">
+      <input
+        className="bg-white text-black rounded-lg placeholder:text-gray-300 italic px-2 py-1"
+        value={todoToAdd}
+        placeholder="Nom de la tâche"
+        onChange={(e) => setTodoToAdd(e.target.value)}
+      />
+      <button
+        className="bg-orange-500 px-2 py-1 rounded-lg text-orange-900 font-bold cursor-pointer hover:bg-orange-400"
+        onClick={addTodo}
+      >
+        Ajouter
+      </button>
     </div>
   );
 });

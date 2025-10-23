@@ -13,26 +13,8 @@ export interface Todo {
 
 export type Filters = "all" | "active" | "completed";
 
-const TODOS: Todo[] = [
-  {
-    id: 1,
-    title: "Acheter du pain",
-    complete: false,
-  },
-  {
-    id: 2,
-    title: "Faire la vaisselle",
-    complete: false,
-  },
-  {
-    id: 3,
-    title: "Réparer porte",
-    complete: false,
-  },
-];
-
 export const TodoList = () => {
-  const [todos, setTodos] = useState(TODOS);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<Filters>("all");
 
   const handleAddTodo = useCallback(
@@ -77,30 +59,34 @@ export const TodoList = () => {
   }, [filter, todos]);
 
   return (
-    <div>
+    <div className="border w-fit px-6 py-4 rounded-lg space-y-4 relative">
+      <div className="bg-amber-950 p-4 rounded-lg absolute w-full inset-x-0 top-0 border-b">
+        <h1 className="font-bold uppercase text-center">Todo List</h1>
+      </div>
       <TodoInput onAddTodo={handleAddTodo} />
-      <h2>Liste des todos : {countTodos} restants</h2>
+      <h2>
+        Liste des todos :
+        <strong className="text-yellow-500"> {countTodos}</strong> restant
+        {filteredTodos.length > 1 ? "s" : ""}
+      </h2>
       <TodoFilters
         onChangeFilter={(filter) => setFilter(filter)}
         currentFilter={filter}
       />
-      <div>
-        {filteredTodos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onCompleteTodo={handleCompleteTodo}
-            onDeleteTodo={handleDeleteTodo}
-          />
-        ))}
+      <div className="space-y-2">
+        {filteredTodos.length > 0 ? (
+          filteredTodos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onCompleteTodo={handleCompleteTodo}
+              onDeleteTodo={handleDeleteTodo}
+            />
+          ))
+        ) : (
+          <p>Aucun élément dans la liste</p>
+        )}
       </div>
     </div>
   );
 };
-
-/* 
-
-**Fonctionnalités obligatoires :**
-- ✅ Styles Tailwind //Done
-- ✅ Tests unitaires (bonus)
-  */
