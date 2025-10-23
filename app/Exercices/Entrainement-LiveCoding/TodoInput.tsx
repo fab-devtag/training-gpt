@@ -14,6 +14,7 @@ export const TodoInput = memo(({ onAddTodo }: TodoInputProps) => {
       id: Date.now(),
       title: todoToAdd,
       complete: false,
+      createdAt: new Date(Date.now()),
     };
     onAddTodo(newTodo);
     setTodoToAdd("");
@@ -26,6 +27,9 @@ export const TodoInput = memo(({ onAddTodo }: TodoInputProps) => {
         value={todoToAdd}
         placeholder="Nom de la tâche"
         onChange={(e) => setTodoToAdd(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") addTodo();
+        }}
       />
       <button
         className="bg-orange-500 px-2 py-1 rounded-lg text-orange-900 font-bold cursor-pointer hover:bg-orange-400"
