@@ -1,4 +1,4 @@
-import { useAddToCart } from "../hooks/useAddToCard";
+import { useAddToCart } from "../hooks/useAddToCart";
 
 export const AddToCartButton = ({ productId }: { productId: number }) => {
   const { mutate, isPending } = useAddToCart();
