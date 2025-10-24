@@ -177,6 +177,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-LiveCoding">
         Entrainemenent - PrepClaude / Entrainement-LiveCoding
       </Link>
+      <Link href="/Exercices/Entrainement-React-Query">
+        Entrainemenent - PrepClaude / Entrainement-React-Query
+      </Link>
     </div>
   );
 }
