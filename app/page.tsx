@@ -175,10 +175,16 @@ export default function Home() {
         Entrainemenent - PrepClaude / Server & Client Component
       </Link>
       <Link href="/Exercices/Entrainement-LiveCoding">
-        Entrainemenent - PrepClaude / Entrainement-LiveCoding
+        Entrainemenent - PrepClaude / LiveCoding
       </Link>
       <Link href="/Exercices/Entrainement-React-Query">
-        Entrainemenent - PrepClaude / Entrainement-React-Query
+        Entrainemenent - PrepClaude / React Query
+      </Link>
+      <Link href="/Exercices/Entrainement-UseMemo">
+        Entrainemenent - PrepClaude / useMemo
+      </Link>
+      <Link href="/Exercices/Entrainement-UseCallback">
+        Entrainemenent - PrepClaude / useCallback
       </Link>
     </div>
   );
