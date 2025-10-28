@@ -186,6 +186,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-UseCallback">
         Entrainemenent - PrepClaude / useCallback
       </Link>
+      <Link href="/Exercices/Entrainement-UseReducer">
+        Entrainemenent - PrepClaude / useReducer
+      </Link>
     </div>
   );
 }
