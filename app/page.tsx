@@ -189,6 +189,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-UseReducer">
         Entrainemenent - PrepClaude / useReducer
       </Link>
+      <Link href="/Exercices/Entrainement-Batching">
+        Entrainemenent - PrepClaude / Batching
+      </Link>
     </div>
   );
 }
