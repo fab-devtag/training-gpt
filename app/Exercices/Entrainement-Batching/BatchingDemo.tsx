@@ -11,7 +11,7 @@ export const BatchingDemo = () => {
     setCount1(count1 + 1);
     setCount1(count1 + 1);
     setCount1(count1 + 1);
-    // Quelle sera la valeur finale ?
+    // Quelle sera la valeur finale ? 1
   };
 
   // Scénario 2 : Functional updates
@@ -19,7 +19,7 @@ export const BatchingDemo = () => {
     setCount2((prev) => prev + 1);
     setCount2((prev) => prev + 1);
     setCount2((prev) => prev + 1);
-    // Quelle sera la valeur finale ?
+    // Quelle sera la valeur finale ? 3
   };
 
   // Scénario 3 : Multiple states
@@ -27,7 +27,7 @@ export const BatchingDemo = () => {
     setCount1((prev) => prev + 1);
     setCount2((prev) => prev + 1);
     setCount3((prev) => prev + 1);
-    // Combien de re-renders ?
+    // Combien de re-renders ? un seul
   };
 
   // Scénario 4 : Async
@@ -36,7 +36,7 @@ export const BatchingDemo = () => {
       setCount1(count1 + 1);
       setCount2(count2 + 1);
     }, 1000);
-    // Combien de re-renders après 1 seconde ?
+    // Combien de re-renders après 1 seconde ? un seul
   };
 
   console.log("Render!");

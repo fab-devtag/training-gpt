@@ -192,6 +192,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-Batching">
         Entrainemenent - PrepClaude / Batching
       </Link>
+      <Link href="/Exercices/Entrainement-CustomHook">
+        Entrainemenent - PrepClaude / Custom Hook
+      </Link>
     </div>
   );
 }
