@@ -7,8 +7,8 @@ interface WindowSize {
 
 export const useWindowSize = (): WindowSize => {
   const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
+    width: typeof window !== "undefined" ? window.innerWidth : 0, //Evite le flash plutôt que ça initialise à 0 direct
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
   });
 
   useEffect(() => {

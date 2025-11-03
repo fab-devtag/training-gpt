@@ -195,6 +195,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-CustomHook">
         Entrainemenent - PrepClaude / Custom Hook
       </Link>
+      <Link href="/Exercices/Entrainement-Context">
+        Entrainemenent - PrepClaude / Context
+      </Link>
     </div>
   );
 }

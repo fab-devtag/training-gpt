@@ -1,5 +1,6 @@
 "use client";
-import { useIntersectionObserver } from "./useIntersectionObserver";
+
+import { useIntersectionObserver } from "./hooks";
 
 export const LazyImage = () => {
   const { ref, isIntersecting } = useIntersectionObserver({

@@ -1,10 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 
-//Si je mets null dans T | null je vais avoir une erreur si il n'ya aucune donnée non ? Je devrais pas plutôt faire [] à la place de null ?
-// Ou alors le ? sur users? permet justement que si y'a pas d'élement il n'ya pas d'erreur ?
-//tu m'as demandé également de parser le json mais j'en ai pas besoin du coup si ? Si je fais .json();
-// Pour le abort je ne sais pas trop comment m'y prendre vu que je fais une autre fonction pour fetchData et pas directement dans le useEffect, je ne sais pas comment faire passer le signal
-
 interface UseFetchResult<T> {
   data: T | null;
   loading: boolean;

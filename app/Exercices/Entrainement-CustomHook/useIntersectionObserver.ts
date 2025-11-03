@@ -6,22 +6,27 @@ interface UseIntersectionObserverOptions {
   rootMargin?: string;
 }
 
-export const useIntersectionObserver = (
-  options: UseIntersectionObserverOptions = {}
-) => {
+export const useIntersectionObserver = ({
+  threshold,
+  root,
+  rootMargin,
+}: UseIntersectionObserverOptions = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const targetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const oberserver = new IntersectionObserver(([entry]) => {
-      setIsIntersecting(entry.isIntersecting);
-    }, options);
+    const oberserver = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { threshold, root, rootMargin }
+    );
 
     if (targetRef.current) oberserver.observe(targetRef.current);
 
     return () => {
       oberserver.disconnect();
     };
-  }, [options.threshold, options.root, options.rootMargin]);
+  }, [threshold, root, rootMargin]);
   return { ref: targetRef, isIntersecting };
 };
