@@ -109,7 +109,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         updateQuantity: (productId, quantity) => {
           updateQuantity.mutate({ productId, quantity });
         },
-        total: 100,
+        total: total,
       }}
     >
       {children}

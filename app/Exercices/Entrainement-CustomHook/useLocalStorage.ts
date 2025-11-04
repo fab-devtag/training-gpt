@@ -7,6 +7,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
   useEffect(() => {
     try {
       const value = localStorage.getItem(key);
+      console.log(value);
       if (value) setStoredValue(JSON.parse(value));
     } catch (error) {
       console.error(error);
@@ -21,7 +22,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
 
       // Mettre à jour le state
       setStoredValue(valueToStore);
-      localStorage.setItem(key, JSON.stringify(value));
+      localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
       console.error(error);
     }
