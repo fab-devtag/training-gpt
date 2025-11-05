@@ -198,6 +198,9 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-Context">
         Entrainemenent - PrepClaude / Context
       </Link>
+      <Link href="/Exercices/Entrainement-Nextjs">
+        Entrainemenent - PrepClaude / Next.js
+      </Link>
     </div>
   );
 }
