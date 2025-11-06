@@ -54,4 +54,11 @@ Exercice 3 :
 7/ ISR Mise à jour quotidienne donc pas besoin de temps réel mais pas de static non plus
 8/ SSG données qui ne changement pas régulièrement à priori, un peu d'hésitation sur celui la
 
+
+Quizz Rapide : 
+1/ Un server component est un composant qui render côté serveur, il envoie tout le HTML au client, pas de JS donc bundle size réduit, bon SEO, pas d'interactivité à l'inverse d'un client component qui est rendu côté client, recoit du HTML et du JS, rend le composant interactif si besoin via des hooks, onclick etc
+2/ SSG pour des pages qui sont static avec très peu de changement, type blog, SSR pour des données qui doivent être fraiche régulièrement, type dashboard, ISR pour un mix des deux, qui n'a pas besoin de mise à jour trè srégulière, type une page de produit par exemple sur un site e commerce
+3/ Ce code est ISR en raison de la présence du revalidate. Le site va servir des données fraiches à un utilisateur, et les garder en cache pendant 3600 secondes, il reservira des données fraiches après ces 3600 secondes si un utilisatuer arrive après cette expiration
+4/ en utilisant des tags aec revalidateTag
+5/ Car il utilise un hook et un onchange 
 */
