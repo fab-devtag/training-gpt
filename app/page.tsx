@@ -201,6 +201,7 @@ export default function Home() {
       <Link href="/Exercices/Entrainement-Nextjs">
         Entrainemenent - PrepClaude / Next.js
       </Link>
+      <Link href="/Exercices/Prep">Prep</Link>
     </div>
   );
 }
